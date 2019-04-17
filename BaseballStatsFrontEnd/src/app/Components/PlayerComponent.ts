@@ -2,10 +2,10 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "MainComponent",
-    templateUrl: "../Templates/MainComponent.html"
+    templateUrl: "../Templates/PlayerComponent.html"
 })
 
-export class MainComponent {
+export class PlayerComponent {
     constructor(){
 
     }
