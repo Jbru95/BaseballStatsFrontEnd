@@ -34,13 +34,14 @@ export class AddModifyPlayerComponent implements OnChanges{
                 this.addModPlayerForm.controls['playerName'].markAsUntouched();
                 this.addModPlayerForm.markAsPristine();
                 this.addModPlayerForm.markAsUntouched();
-                this.addModPlayerForm.controls['WAR'].setValue(0.0)
-                this.addModPlayerForm.controls['Average'].setValue(0.0)
-                this.addModPlayerForm.controls['Hits'].setValue(0)
-                this.addModPlayerForm.controls['Homeruns'].setValue(0)
-                this.addModPlayerForm.controls['OBP'].setValue(0.0)
-                this.addModPlayerForm.controls['Slug'].setValue(0.0)
-                this.addModPlayerForm.controls['OPS'].setValue(0.0)
+                this.addModPlayerForm.controls['WAR'].setValue(0.0);
+                this.addModPlayerForm.controls['Average'].setValue(0.0);
+                this.addModPlayerForm.controls['Hits'].setValue(0);
+                this.addModPlayerForm.controls['Homeruns'].setValue(0);
+                this.addModPlayerForm.controls['Walks'].setValue(0);
+                this.addModPlayerForm.controls['OBP'].setValue(0.0);
+                this.addModPlayerForm.controls['Slug'].setValue(0.0);
+                this.addModPlayerForm.controls['OPS'].setValue(0.0);
             }
             this.mode = newDetails.mode;
             if ( newDetails.selectedRow != null){
@@ -64,6 +65,7 @@ export class AddModifyPlayerComponent implements OnChanges{
             Average: [0.0],
             Hits: [0],
             Homeruns: [0],
+            Walks: [0],
             OBP: [0.0],
             Slug: [0.0],
             OPS: [0.0],
@@ -84,6 +86,7 @@ export class AddModifyPlayerComponent implements OnChanges{
         this.addModPlayerForm.controls['Average'].setValue(details.Average)
         this.addModPlayerForm.controls['Hits'].setValue(details.hits)
         this.addModPlayerForm.controls['Homeruns'].setValue(details.Homeruns)
+        this.addModPlayerForm.controls['Walks'].setValue(details.Walks);
         this.addModPlayerForm.controls['OBP'].setValue(details.OBP)
         this.addModPlayerForm.controls['Slug'].setValue(details.Slug)
         this.addModPlayerForm.controls['OPS'].setValue(details.OPS)
@@ -162,6 +165,7 @@ export class AddModifyPlayerComponent implements OnChanges{
         this.addModPlayerForm.controls['Average'].setValue(0.0)
         this.addModPlayerForm.controls['Hits'].setValue(0)
         this.addModPlayerForm.controls['Homeruns'].setValue(0)
+        this.addModPlayerForm.controls['Walks'].setValue(0);
         this.addModPlayerForm.controls['OBP'].setValue(0.0)
         this.addModPlayerForm.controls['Slug'].setValue(0.0)
         this.addModPlayerForm.controls['OPS'].setValue(0.0)

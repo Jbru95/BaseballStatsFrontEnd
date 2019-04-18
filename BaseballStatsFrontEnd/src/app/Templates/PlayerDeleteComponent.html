@@ -1,1 +1,18 @@
-<p>Player Delete Component</p>
+<div class="modal fade" id="deletePlayerModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header window-title">
+                <div class="dialogTitleBar">
+                    <p class="primaryText">Delete confirmation</p>
+                </div>
+            </div>
+            <div class="modal-body" style="padding:20px 0px 0px 24px;">
+                Are you absolutely sure you want to delete this Player?
+            </div>
+            <div class="modal-footer" style="padding-top:0px;">
+                <button type="button" class="btn btn-link" style="margin-left:4px;" (click)="closeModal()">No</button>
+                <button type="submit" class="btn btn-link" style="margin-right:4px;" (click)="confirm()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

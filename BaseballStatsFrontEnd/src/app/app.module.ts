@@ -9,7 +9,9 @@ import { AddModifyPlayerComponent } from './Components/PlayerAddModifyComponent'
 import { DeletePlayerComponent } from './Components/PlayerDeleteComponent';
 import { PlayerService } from './Services/PlayerService';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { GridModule } from '@progress/kendo-angular-grid';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    GridModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PlayerService, HttpClient],
   bootstrap: [AppComponent]

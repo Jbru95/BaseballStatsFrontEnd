@@ -1,6 +1,23 @@
-<p>Main Component</p>
-<button (click)="getAllPlayers()">getPlayers</button>
-
-<button (click)="addPlayer()">add player</button>
-
-<button (click)="modPlayer()">mod player</button>
+<div class="container-fluid no-gutter">
+    <div class="col-sm-3 col-xs-12">
+        <header>Players</header>
+    </div>
+    <div class="col-md-7 col-sm-6 col-xs-12">
+        <button class="btn btn-primary pull-right" style="margin-left:8px;" [disabled]="selectedRow == null" data-toggle="modal" data-keyboard="true" data-backdrop="static" data-target="#deletePlayerModal">Delete</button>
+        <button class="btn btn-primary pull-right" style="margin-left:8px;" [disabled]="selectedRow == null" data-toggle="modal" data-keyboard="true" data-backdrop="static" data-target="#addModifyPlayerModal" (click)="modalDetails = { mode: 'Modify', selectedRow: selectedRow }">Modify</button>
+        <button class="btn btn-primary pull-right" data-toggle="modal" data-keyboard="true" data-backdrop="static" data-target="#addModifyPlayerModal" (click)="modalDetails = { mode: 'Add', selectedRow: null }">Add</button>
+    </div>
+    <div class="col-xs-12" style="padding-top:16px; padding-bottom:50px;">
+        <kendo-grid [data]="gridView" [height]="gridHeight" [rowSelected]="isRowSelected" [reorderable]="true" [selectable]="true" [resizable]="true" [filterable]="false" [sort]="sort" (selectionChange)="rowSelected($event)">
+            <kendo-grid-column field="carrierCode" title="Carrier Code" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="carrierNumericCode" title="IATA Carrier Code" width="140" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="description" title="Description" width="300" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="defaultSortDest" title="Destination" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="suspectThreshold" title="BSM Suspect Threshold" width="180" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="failedThreshold" title="BSM Failed Threshold" width="170" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="consecNoBsm" title="Consecutive Bags w/o BSM" width="210" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+        </kendo-grid>
+    </div>
+</div>
+<Player-Add-Modify [playerDetails]="selectedRow" (close)="modalClosed($event)" (cmdRes)="onCmdRes($event)"></Player-Add-Modify>
+<Delete-Player [playerDetails]="selectedRow" (close)="modalClosed($event)" (cmdRes)="onCmdRes($event)"></Delete-Player>

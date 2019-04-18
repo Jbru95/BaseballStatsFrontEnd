@@ -1,1 +1,74 @@
-<p>Player Add Modify Component</p>
+<div style="position:fixed;" class="modal fade" id="addModifyPlayerModal" role="dialog">
+    <div [draggable] class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header window-title">
+                <div class="windowTitleBar">
+                    {{mode}} Player
+                    <a class="pull-right closeWindow" (click)="closeModal()">&times;</a>
+                </div>
+            </div>
+            <form [formGroup]="addModPlayerForm" (ngSubmit)="submitPlayer()">
+                <div class="modal-body">
+                    <table style="width:100%;">
+                        <tr>
+                            <td><label>Player Name</label></td>
+                            <td>
+                                <input type="text" class="form-control" formControlName="playerName" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Player Description</label></td>
+                            <td>
+                                <input type="text" class="form-control" formControlName="playerDescription" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Number</label></td>
+                            <td><input type="text" class="form-control" formControlName="Number" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Position</label></td>
+                            <td><input type="text" class="form-control" formControlName="Position" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>WAR</label></td>
+                            <td><input type="text" class="form-control" formControlName="WAR" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Average</label></td>
+                            <td><input type="text" class="form-control" formControlName="Average" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Hits</label></td>
+                            <td><input type="text" class="form-control" formControlName="Hits" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Homeruns</label></td>
+                            <td><input type="text" class="form-control" formControlName="Homeruns" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Walks</label></td>
+                            <td><input type="text" class="form-control" formControlName="Walks" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>OBP</label></td>
+                            <td><input type="text" class="form-control" formControlName="OBP" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Slug</label></td>
+                            <td><input type="text" class="form-control" formControlName="Slug" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>OPS</label></td>
+                            <td><input type="text" class="form-control" formControlName="OPS" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right" style="margin-left:8px;" [disabled]="!(addModPlayerForm.valid && addModPlayerForm.dirty)">Save</button>
+                    <button type="button" class="btn btn-primary pull-right" (click)="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
