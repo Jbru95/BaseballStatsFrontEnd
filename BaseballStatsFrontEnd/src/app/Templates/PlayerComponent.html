@@ -9,13 +9,19 @@
     </div>
     <div class="col-xs-12" style="padding-top:16px; padding-bottom:50px;">
         <kendo-grid [data]="gridView" [height]="gridHeight" [rowSelected]="isRowSelected" [reorderable]="true" [selectable]="true" [resizable]="true" [filterable]="false" [sort]="sort" (selectionChange)="rowSelected($event)">
-            <kendo-grid-column field="carrierCode" title="Carrier Code" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="carrierNumericCode" title="IATA Carrier Code" width="140" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="description" title="Description" width="300" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="defaultSortDest" title="Destination" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="suspectThreshold" title="BSM Suspect Threshold" width="180" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="failedThreshold" title="BSM Failed Threshold" width="170" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
-            <kendo-grid-column field="consecNoBsm" title="Consecutive Bags w/o BSM" width="210" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="playerName" title="Name" width="200" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <!-- <kendo-grid-column field="playerDescription" title="Description" width="140" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column> -->
+            <kendo-grid-column field="Number" title="Number" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Position" title="Position" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="WAR" title="WAR" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Average" title="Average" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Hits" title="Hits" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Homeruns" title="Homeruns" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Walks" title="Walks" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="OBP" title="OBP" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="Slug" title="Slug" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+            <kendo-grid-column field="OPS" title="OPS" width="100" [headerClass]="{ 'k-grid-column-header': true }"></kendo-grid-column>
+
         </kendo-grid>
     </div>
 </div>
