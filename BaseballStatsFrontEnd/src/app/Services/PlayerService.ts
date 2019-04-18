@@ -5,7 +5,7 @@ import { throwError as observableThrowError, Observable, from} from 'rxjs';
 
 @Injectable()
 export class PlayerService{
-    private endPointUrl: string = "localhost:64450/api/player/";
+    private endPointUrl: string = "http://localhost:64485/api/player";
     http: HttpClient = null;
 
     constructor(http: HttpClient){
@@ -19,6 +19,7 @@ export class PlayerService{
      */
     public getAllPlayers(){
         const url = this.endPointUrl;
+        console.log(url);
         return this.get(url); 
     }
 
@@ -69,16 +70,17 @@ export class PlayerService{
      * @param url url to send the GET request to
      */
     private get(url: string){
-        let options = {
-            headers: new HttpHeaders({'Content-Type':'application/json'})
-        }
+        // let options = {
+        //     headers: new HttpHeaders({'Content-Type':'application/json'})
+        // }
         return this.http.get(
             url, 
             {
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                observe: 'response'
+                }
+                // ,
+                // observe: 'response'
             }).pipe(
                 map(res => res),
                 catchError(this.handleError)

@@ -4,7 +4,6 @@ import { take } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { MatSnackBarModule, MatSnackBar } from "@angular/material/snack-bar";
 import { PlayerService } from '../Services/PlayerService';
-import { timingSafeEqual } from 'crypto';
 
 @Component({
     selector: 'Player-Add-Modify',

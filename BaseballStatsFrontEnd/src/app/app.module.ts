@@ -7,6 +7,9 @@ import { PlayerComponent } from './Components/PlayerComponent';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddModifyPlayerComponent } from './Components/PlayerAddModifyComponent';
 import { DeletePlayerComponent } from './Components/PlayerDeleteComponent';
+import { PlayerService } from './Services/PlayerService';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,10 @@ import { DeletePlayerComponent } from './Components/PlayerDeleteComponent';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PlayerService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
